@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Image protégée par mot de passe</title>
+<style>
+body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+#image { display: none; margin-top: 20px; max-width: 90%; height: auto; }
+</style>
+</head>
+<body>
+
+<h2>Entrez le mot de passe pour voir l'image</h2>
+<input type="password" id="password" placeholder="Mot de passe" />
+<button onclick="verifier()">Valider</button>
+
+<p id="message" style="color:red;"></p>
+
+<img id="image" src="capture252525" alt="Image protégée" />
+
+<script>
+function verifier() {
+const mdp = document.getElementById('password').value;
+const message = document.getElementById('message');
+const image = document.getElementById('image');
+if (mdp === "e4e6d3d5d2") {
+message.textContent = "";
+image.style.display = "block";
+} else {
+message.textContent = "Mot de passe incorrect, réessaie.";
+image.style.display = "none";
+}
+}
+</script>
+
+</body>
+</html>
